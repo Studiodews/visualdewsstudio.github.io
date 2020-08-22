@@ -1,32 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JSON Test</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="myData"></div>
-    <script>
-        fetch('file:///storage/emulated/0/.website_creator/projects/1/people.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                appendData(data);
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
-        function appendData(data) {
-            var mainContainer = document.getElementById("myData");
-            for (var i = 0; i < data.length; i++) {
-                var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
-                mainContainer.appendChild(div);
-            }
-        }
-    </script>
+  <header>
+    <nav>
+      <div class="logo">
+        <strong>VisualDewsStudio</strong>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#project">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#policies">Policies</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <img src="https://www.w3schools.com/w3images/architect.jpg" alt="">
+    <h1><b>VisualDewsStudio</b> <span> architects</span></h1>
+  </main>
+  <section class="project" id="project">
+    <h2>projects</h2>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <div class="img">
+          <img src="https://www.w3schools.com/w3images/house5.jpg" alt="">
+          <p>
+            Notes-Lib
+          </p>
+        </div>
+        <div class="img">
+          <img src="https://www.w3schools.com/w3images/house2.jpg" alt="">
+          <p>
+            TicTacToe
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>about</h2>
+    <hr>
+    <p>
+      VisualDewsStudio as a company wishes to bring good technology through the development of Android Applications.
+    </p>
+    <div class="row">
+      <div class="col">
+        <div class="team">
+          <img src="https://www.w3schools.com/w3images/team2.jpg" alt="">
+          <div class="info-box">
+            <h1>Elechi Evan</h1>
+            <h3>CEO & founder</h3>
+            <h3>Programmer</h3>
+            <h3>Architect</h3>
+            <p>
+              /* about elechi evan*/
+            </p>
+          </div>
+          <a href="#">Contact</a>
+        </div>
+
+        <div class="team">
+          <img src="https://www.w3schools.com/w3images/team1.jpg" alt="">
+          <div class="info-box">
+            <h1>Mac Mill</h1></h1>
+          <h3>Architect</h3>
+          <p>
+
+          </p>
+        </div>
+        <a href="#">Contact</a>
+      </div>
+    </br>
+    <div>
+      <h1>Support and Contribution</h1>
+      <div class="support">
+        <img src="https://www.w3schools.com/w3images/team3.jpg" alt="ALT">
+        <div class="info-box">
+          <h1>DuoEdgeStudio</h1>
+        </div>
+      </img>
+    </div>
+  </div>
+  <section class="contact" id="contact">
+    <h1>contact</h1>
+    <hr>
+    <p>
+      Lets get in touch and talk about what you like to expect from us.
+    </p>
+    <form id="inline-form">
+      <div>
+        <input type="text" placeholder="Name" required>
+      </div>
+      <div>
+        <input type="email" placeholder="Email" required>
+      </div>
+      <div>
+        <input type="text" placeholder="Message" required>
+      </div>
+      <div>
+        <input type="text" placeholder="Comment">
+      </div>
+    </form>
+    <button>send message</button>
+  </section>
+
+  <footer>
+    <div>
+      <p>
+        powered by <b onclick="navigate();">VisualDewsStudio</b>
+      </p>
+    </div>
+  </footer>
+  <script type="text/Javascript">
+    function navShow() {
+      const burger = document.querySelector(".burger");
+      const ul = document.querySelector(".nav-links");
+      const ulItem = document.querySelectorAll("nav-links li a");
+
+      burger.addEventListener("click", () => {
+        //toggle
+        ul.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+      });
+    }
+    navShow();
+  </script>
+  <script>
+    function navigate() {
+      let screen = document.getElementById(inline-form);
+      screen.scrollIntoView();
+    }
+  </script>
 </body>
 </html>
